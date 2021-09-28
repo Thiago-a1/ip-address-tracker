@@ -15,6 +15,8 @@ export default function Input() {
 		event.preventDefault()
 
 		getData(ip);
+
+		setIp('');
 	}
 
 	return (

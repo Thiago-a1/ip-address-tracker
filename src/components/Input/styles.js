@@ -15,7 +15,15 @@ export const Container = styled.form`
 
 	background-color: var(--Primary-Background-color);
 
-	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 20%);
+	@media (min-width: 840px) {
+		width: 66.7%;
+
+		margin-bottom: 32px;
+	}
+
+	@media (min-width: 1140px) {
+		width: 57.1%;
+	}
 
 	input {
 		flex: 5;
@@ -39,5 +47,9 @@ export const Container = styled.form`
 		border: none;
 
 		background-color: var(--Secondary-Background-color);
+
+		&:hover {
+			background-color: var(--Primary-color);
+		}
 	}
 `;

@@ -11,19 +11,19 @@ export default function Infos () {
 		<Container>
 			<div>
 				<h2>Ip Address</h2>
-				<span>{data.ip}</span>
+				<h3>{data.ip}</h3>
 			</div>
 			<div>
 				<h2>Location</h2>
-				<span>{data.location.city}, {data.location.region}</span>
+				<h3>{data.location.city}, {data.location.region}</h3>
 			</div>
 			<div>
 				<h2>Timezone</h2>
-				<span>UTC {data.location.timezone}</span>
+				<h3>UTC {data.location.timezone}</h3>
 			</div>
 			<div>
 				<h2>ISP</h2>
-				<span>{data.as.name}</span>
+				<h3>{data.as.name}</h3>
 			</div>
 		</Container>
 	)

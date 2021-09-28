@@ -15,6 +15,30 @@ export const Container = styled.div`
 
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 20%);
 
+	@media (min-width: 840px) {
+		flex-direction: row;
+		justify-content: space-between;
+
+		width: 100%;
+		height: 160px;
+		padding: 32px 32px 32px 10px;
+
+		div {
+			max-width: 220px;
+
+			padding-left: 22px;
+			word-wrap: unset;
+		}
+
+		div + div{
+			border-left: 1px solid var(--Secondary-color);
+		}
+
+		div h2, h3 {
+			text-align: start;
+		}
+	}
+
 	div {
 		text-align: center;
 
@@ -29,7 +53,7 @@ export const Container = styled.div`
 			margin-bottom: 6px;
 		}
 
-		span {
+		h3 {
 			font-size: 1.5rem;
 			font-weight: 500;
 		}

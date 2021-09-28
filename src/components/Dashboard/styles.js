@@ -7,6 +7,14 @@ export const Container = styled.main`
 	width: 375px;
 	margin: 32px auto;
 
+	@media (min-width: 840px) {
+		width: 840px;
+	}
+
+	@media (min-width: 1140px) {
+		width: 980px;
+	}
+
 	h1 {
 		font-size: 1.8rem;
 		text-align: center;

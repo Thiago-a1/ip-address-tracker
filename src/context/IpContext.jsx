@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import isIp from 'is-ip';
 
 import api from '../services/api';
 
@@ -40,17 +41,32 @@ export const IpProvider = ({children}) => {
     },
 });
 
-	async function getData (ip) {
-		try {
-			const response = await api.get(`ipAddress=${ip}`);
+	async function getData (value) {
+        if (isIp(value)) {
+            try {
+			const response = await api.get(
+                `v1?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${value}`
+            );
 
-			setData(response.data);
+            const { data } = response;
 
-			console.log(data);
-		} catch (err) {
-			console.log(`${err}`)
+			setData(data);
+
+            } catch (err) {
+			alert('invalid Ip')
 		}
-	}
+        } else if (!isIp(value)) {
+            try {
+			const response = await api.get(`v1?apiKey=${process.env.REACT_APP_API_KEY}&domain=${value}`);
+
+            const { data } = response;
+
+			setData(data);
+            } catch (err) {
+			alert(`invalid domain`)
+            }
+	    }
+    }
 
 	return (
 		<IpContext.Provider value={{ data, getData }}>
